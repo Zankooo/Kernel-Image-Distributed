@@ -1,4 +1,4 @@
-# 🖼️  Kernel Image Processing (Paralelna izvedba)
+# 🖼️  Kernel Image Processing (Porazdeljena izvedba)
 
 Kernel image processing je temeljna tehnika računalniškega vida, kjer sliko obdelamo tako, da čez njo “drsi” majhen filter (kernel) in na vsakem pikslu izračuna novo vrednost na podlagi pikslov ki so okoli njega - v njegovi okolici. To je osnova za ogromno realnih funkcij: zamegljevanje - blur(odstranjevanje šuma), ostrenje - sharpen (poudarjanje detajlov), zaznavanje robov (npr. Sobel/edge detection), izboljšanje kontrasta in pripravo slike za nadaljnjo analizo. Ker so kerneli hitri, predvidljivi in dobro delujejo na različnih tipih slik, se uporabljajo praktično povsod — od kamer na telefonih in Instagram/CapCut filtrov, do medicinskega slikanja, industrijske kontrole kakovosti, OCR/scan izboljšav, pa tudi kot “prvi korak” v pipeline-u za bolj napredne metode, kot so modeli za prepoznavanje objektov in segmentacijo.
 
@@ -32,7 +32,7 @@ Mi kot uporabnik programa damo programu eno ali več slik svojih poljubnih slik 
 ## 🚩 Navodila za zagon programa
 
 1. Če programa še nimaš lokalno ga namestiš s komando:
-` git clone https://github.com/Zankooo/Kernel-Image-Parallel.git `
+` git clone https://github.com/Zankooo/Kernel-Image-Distributed.git `
 2. Program zaženeš tako da zaženeš Main.java in mora delovati. Pri implementaciji sem uporabljal `open jdk-24.0.2` vendar bi program moral delovati tudi na drugih verzijah Jave. 
 
 ## 📝 Opombe
@@ -44,7 +44,7 @@ Mi kot uporabnik programa damo programu eno ali več slik svojih poljubnih slik 
 Testiranje sem opravil na svojem osebnem računalniku:
 MacBook Pro M1 Max 64Gb/2Tb. 
 
-Pri vseh treh verzijah programa (sekvenčni, vzporedni in porazdeljeni) sem (bom) opravil testiranje na popolnoma istih slikah na popolnoma identičnih operacijah. 
+
 
 ### Testing Table - to še naredit
 
@@ -128,10 +128,6 @@ Pri vseh treh verzijah programa (sekvenčni, vzporedni in porazdeljeni) sem (bom
 | 4096 x 4096 Slika      | 0,449 sec  | Time for Parallel   | Time for Distributed|
 
 
-## ⚡ Izboljšane oziroma drugačne verzije programa
 
-Ta program je implementiran paralelno (vzporedno). 
-Glede na njegovo strukturo nam daje možnost da smo sekvenčnega optimizirali in dobili trenutno verzijo. 
-Sledi še na drug način tako imenovana `porazdeljena (distributed)` izvedba... Coming soon
 
 
