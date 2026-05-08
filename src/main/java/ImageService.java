@@ -83,14 +83,11 @@ public class ImageService {
 
         ArrayList<BufferedImage> rezultati;
         try {
-            if (mpi.MPI.COMM_WORLD.Size() > 1) {
-                rezultati = KonvolucijaMPI.izvediOperacijeDistributed(slike, kerneli, imenaKernelov, cbmirror);
-            } else {
-                rezultati = Konvolucija.izvediOperacije(slike, kerneli, cbmirror);
-            }
+            // Projekt je namenjen izključno MPI izvedbi (vsaj 2 procesa)
+            rezultati = KonvolucijaMPI.izvediOperacije(slike, kerneli, imenaKernelov, cbmirror);
         } catch (mpi.MPIException e) {
             System.err.println("MPI Napaka: " + e.getMessage());
-            rezultati = Konvolucija.izvediOperacije(slike, kerneli, cbmirror);
+            rezultati = new ArrayList<>();
         }
 
         long koncaniCas = System.currentTimeMillis();

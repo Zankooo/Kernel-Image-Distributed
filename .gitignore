@@ -1,32 +1,48 @@
-### IntelliJ IDEA ###
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
 
-### Eclipse ###
-.apt_generated
+### Java ###
+*.class
+*.log
+*.ctxt
+*.jar
+!lib/*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+### Slike (Rezultati) ###
+ustvarjene slike/
+input_images/
+
+### IDE specifično ###
+.idea/
+*.iml
+*.iws
+.settings/
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
+.factorypath
 bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### NetBeans ###
-/nbproject/private/
+out/
+.vscode/
+.nbproject/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
-.vscode/
-
-### Mac OS ###
+### OS specifično ###
 .DS_Store
-
-### ustvarjene slike, da se .git ne fila
-.ustvarjeneSlike
+Thumbs.db

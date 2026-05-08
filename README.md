@@ -29,14 +29,51 @@ Mi kot uporabnik programa damo programu eno ali več slik svojih poljubnih slik 
 - V konzoli pa tudi lahko vidimo katere operacije so se zgodile na kateri sliki, v kakšnem vrstnem redu, in tudi koliko je program potreboval da je naredil vse operacije nad izbranimi slikami!
 
 
-## 🚩 Navodila za zagon (Maven verzija)
+## 🚩 Navodila za zagon
 
-Projekt uporablja **Maven** za upravljanje odvisnosti. Knjižnica `mpj.jar` je vključena v mapi `lib/`.
+Projekt uporablja **Maven** za upravljanje odvisnosti in **MPJ Express** za porazdeljeno izvajanje.
 
-1. **Prevajanje:** `mvn clean compile`
-2. **Zagon:** `$MPJ_HOME/bin/mpjrun.sh -np 4 -cp target/classes:lib/mpj.jar Main`
+### 1. Priprava okolja
+Pred prvim zagonom si moraš na računalnik prenesti [MPJ Express](http://mpjexpress.org/) in nastaviti okoljsko spremenljivko `MPJ_HOME`, ki kaže na mapo, kjer si razširil knjižnico.
+
+**Primer nastavitve (Mac/Linux):**
+V svojo `.zshrc` ali `.bash_profile` dodaj:
+```bash
+export MPJ_HOME=/pot/do/mape/mpj-v0_44
+```
+
+### 2. Prevajanje in zagon
+V korenski mapi projekta izvedi:
+
+1. **Prevajanje:** 
+   ```bash
+   mvn clean compile
+   ```
+2. **Zagon:** 
+   ```bash
+   $MPJ_HOME/bin/mpjrun.sh -np 4 -cp target/classes:lib/mpj.jar Main
+   ```
+
+ampak zakaj moras pol rocno naloziti mpj express ce je v maven to opisano??
+
+To je odlično vprašanje! Gre za razliko med prevajanjem in izvajanjem:
+
+Za prevajanje (Maven): Maven potrebuje samo datoteko mpj.jar, da ve, kateri ukazi obstajajo. V tvojem pom.xml vidiš, da je ta knjižnica nastavljena kot system odvisnost, kar pomeni: "Maven, ne išči tega na spletu, poglej v mojo mapo lib/mpj.jar." To zadošča, da ukaz mvn clean compile uspešno ustvari tvoj program.
+Za izvajanje (MPJ Express Runtime): MPI ni navadna knjižnica, ampak celotno okolje. Da tvoj program dejansko teče na več procesih, potrebuje zaganjalnik (mpjrun.sh), ki zna komunicirati z operacijskim sistemom, odpirati vrata (ports) za komunikacijo in upravljati z več procesi hkrati. Tega dela Maven ne more opraviti, ker so to sistemske skripte in ne Java koda.
+V tvojem primeru:
+
+Maven poskrbi, da tvoj program "ve", kako se pogovarjati z MPI.
+MPJ Express (ki ga naložiš ročno) pa je "motor", ki tvoj program dejansko požene in omogoči to pogovarjanje.
+Če bi MPJ Express obstajal kot standardna Maven knjižnica (ki bi vključevala tudi zaganjalnike), bi ga Maven morda lahko naložil sam, vendar je MPJ specifično orodje, ki zahteva namestitev na nivoju operacijskega sistema.
+
+
+
+
+
+
 
 ## 📝 Opombe
+- **POMEMBNO:** Za delovanje so potrebni vsaj **2 procesa** (parameter `-np 2` ali več). Prvi proces (Master) upravlja z GUI, ostali pa opravljajo delo. Če program zaženeš z manj kot dvema procesoma, se obdelava ne bo izvedla.
 - V celotnem `README.md` ne omenjam da izvedemo konvolucije ampak operacije. To pa zato ker blur, edge detection... že res so konvolucije ampak mirror ne moremo šteti kot konvolucijo ampak je bolj transformacija. 
 - Če izberemo tudi operacijo Mirror se bo Mirror operacija vedno zadnja izvedla! Sekvenca operacij (ena za drugo v izbranem vrstnem redu) šteje le za konvolucije. Medtem ko se, če izberemo mirror, zvede vedno zadnja. 
 

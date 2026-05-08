@@ -1,6 +1,5 @@
-/Users/zanstankovic/Downloads/Kernel-Image-Parallel/src/main/java/Main.java
-/Users/zanstankovic/Downloads/Kernel-Image-Parallel/src/main/java/Kernel.java
-/Users/zanstankovic/Downloads/Kernel-Image-Parallel/src/main/java/Konvolucija.java
-/Users/zanstankovic/Downloads/Kernel-Image-Parallel/src/main/java/KonvolucijaMPI.java
-/Users/zanstankovic/Downloads/Kernel-Image-Parallel/src/main/java/ImageService.java
-/Users/zanstankovic/Downloads/Kernel-Image-Parallel/src/main/java/Gui.java
+/Users/zanstankovic/Downloads/Kernel-Image-Distributed/src/main/java/ImageService.java
+/Users/zanstankovic/Downloads/Kernel-Image-Distributed/src/main/java/Gui.java
+/Users/zanstankovic/Downloads/Kernel-Image-Distributed/src/main/java/Kernel.java
+/Users/zanstankovic/Downloads/Kernel-Image-Distributed/src/main/java/KonvolucijaMPI.java
+/Users/zanstankovic/Downloads/Kernel-Image-Distributed/src/main/java/Main.java
