@@ -44,18 +44,21 @@ public class ImageService {
     
     public static ArrayList<BufferedImage> naloziSlikeIzMape(File[] datoteke) {
         ArrayList<BufferedImage> slikeSeznam = new ArrayList<>();
-
+        System.out.println("📂 Nalagam slike v pomnilnik...");
         if (datoteke != null) {
+            int count = 0;
             for (File datoteka : datoteke) {
                 try {
                     String ime = datoteka.getName().toLowerCase();
                     if (ime.endsWith(".png") || ime.endsWith(".jpg") || ime.endsWith(".jpeg")) {
                         slikeSeznam.add(ImageIO.read(datoteka));
+                        count++;
                     }
                 } catch (IOException e) {
                     System.out.println("Napaka pri datoteki: " + datoteka.getName());
                 }
             }
+            System.out.println("✅ Naloženih " + count + " slik.");
         }
 
         return slikeSeznam;
@@ -78,14 +81,23 @@ public class ImageService {
         // tukaj ne vključimo notri čas branja slika čas write na disk..
         long zacetniCas = System.currentTimeMillis();
 
-        ArrayList<BufferedImage> rezultati =
-                Konvolucija.izvediOperacije(slike, kerneli, cbmirror);
+        ArrayList<BufferedImage> rezultati;
+        try {
+            if (mpi.MPI.COMM_WORLD.Size() > 1) {
+                rezultati = KonvolucijaMPI.izvediOperacijeDistributed(slike, kerneli, imenaKernelov, cbmirror);
+            } else {
+                rezultati = Konvolucija.izvediOperacije(slike, kerneli, cbmirror);
+            }
+        } catch (mpi.MPIException e) {
+            System.err.println("MPI Napaka: " + e.getMessage());
+            rezultati = Konvolucija.izvediOperacije(slike, kerneli, cbmirror);
+        }
 
         long koncaniCas = System.currentTimeMillis();
         double kolikoCasaJeTrajaloSek = (koncaniCas - zacetniCas) / 1000.0;
 
         System.out.println();
-        System.out.println("Čas za izvedbo vsega zgoraj je trajal: " + kolikoCasaJeTrajaloSek + " sekund");
+        System.out.println("⏱️ Čas IZRAČUNA (brez branja/shranjevanja): " + kolikoCasaJeTrajaloSek + " sekund");
         
         //shranimo v mapo slike
         shraniNoveSlikeVmapo(rezultati);
@@ -109,6 +121,7 @@ public class ImageService {
             mapa.mkdirs();
         }
 
+        System.out.println("💾 Shranjevanje obdelanih slik (ustvarjeneSlike/)...");
         // shranimo slike notri
         for (int i = 0; i < rezultati.size(); i++) {
             BufferedImage rezultat = rezultati.get(i);
@@ -117,7 +130,9 @@ public class ImageService {
                     "png",
                     new File(mapa, "slika_" + (i + 1) + ".png")
             );
+            System.out.print("."); // Pika za vsako shranjeno sliko
         }
+        System.out.println("\n✅ Vse slike so shranjene.");
 
         System.out.println();
         System.out.println("Ustvarjene slike so na voljo v mapi: ustvarjeneSlike");

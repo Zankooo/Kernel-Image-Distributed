@@ -31,12 +31,10 @@ public class Konvolucija {
             BufferedImage trenutnaSlika = slike.get(i);
             // in na njen naredimo sekvenco vseh izbranih kernelov
             for (int j = 0; j < kerneli.size(); j++) {
-                
-                System.out.println("Za " + (i + 1) + ". sliko je končana operacija: " + Arrays.deepToString(kerneli.get(j)) );
-                
                 float[][] kernel = kerneli.get(j);
                 // kličemo logično funkcijo
                 trenutnaSlika = konvolucijaRGBParallel(trenutnaSlika, kernel);
+                System.out.println("Za " + (i + 1) + ". sliko je končana operacija: " + Arrays.deepToString(kerneli.get(j)) );
             }
             // OBRAT SLIKE OZ MIRROR SE NAREDI VEDNO NA KONCU!
             if (cbMirror.isSelected()) {
@@ -168,6 +166,9 @@ public class Konvolucija {
 
         return novaSlika;
     }
+
+
+
 
     private static int clamp(int v, int lo, int hi) {
         return Math.max(lo, Math.min(hi, v));

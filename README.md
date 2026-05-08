@@ -29,11 +29,12 @@ Mi kot uporabnik programa damo programu eno ali več slik svojih poljubnih slik 
 - V konzoli pa tudi lahko vidimo katere operacije so se zgodile na kateri sliki, v kakšnem vrstnem redu, in tudi koliko je program potreboval da je naredil vse operacije nad izbranimi slikami!
 
 
-## 🚩 Navodila za zagon programa
+## 🚩 Navodila za zagon (Maven verzija)
 
-1. Če programa še nimaš lokalno ga namestiš s komando:
-` git clone https://github.com/Zankooo/Kernel-Image-Distributed.git `
-2. Program zaženeš tako da zaženeš Main.java in mora delovati. Pri implementaciji sem uporabljal `open jdk-24.0.2` vendar bi program moral delovati tudi na drugih verzijah Jave. 
+Projekt uporablja **Maven** za upravljanje odvisnosti. Knjižnica `mpj.jar` je vključena v mapi `lib/`.
+
+1. **Prevajanje:** `mvn clean compile`
+2. **Zagon:** `$MPJ_HOME/bin/mpjrun.sh -np 4 -cp target/classes:lib/mpj.jar Main`
 
 ## 📝 Opombe
 - V celotnem `README.md` ne omenjam da izvedemo konvolucije ampak operacije. To pa zato ker blur, edge detection... že res so konvolucije ampak mirror ne moremo šteti kot konvolucijo ampak je bolj transformacija. 
@@ -129,5 +130,10 @@ MacBook Pro M1 Max 64Gb/2Tb.
 
 
 
+# prevedeš
+javac -cp .:$MPJ_HOME/lib/mpj.jar src/*.java -d bin
 
+# zalaufas
+
+$MPJ_HOME/bin/mpjrun.sh -np 4 -cp bin Main
 
