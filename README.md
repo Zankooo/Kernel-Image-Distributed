@@ -136,6 +136,12 @@ MacBook Pro M1 Max 64Gb/2Tb.
 | 3072 x 3072 Slika      | 4,105 sec            | 0,887 sec                        | 0,334 sec|
 | 4096 x 4096 Slika      | 7,395 sec            | 1,493 sec                         | 0,592 sec|
 
+![alt text](/slike-grafov/Blur.png)
+
+<br>
+<hr>
+<br>
+
 | Sharpen                | Sekvenčna izvedba    | Paralelna izvedba (9 jeder) | Distributed izvedba |
 |------------------------|----------------------|---------------------|---------------------|
 | 128 x 128 Slika        | 0,01 sec             | 0,004 sec           | 0,003 sec|
@@ -148,6 +154,11 @@ MacBook Pro M1 Max 64Gb/2Tb.
 | 2048 x 2048 Slika      | 0,862 sec            | 0,304 sec           | 0,117 sec|
 | 3072 x 3072 Slika      | 1,936 sec            | 0,733 sec           | 0,260 sec|
 | 4096 x 4096 Slika      | 3,417 sec            | 1,241 sec           | 0,465 sec|
+
+![alt text](/slike-grafov/sharpen.png)
+<br>
+<hr>
+<br>
 
 |  SobelX                | Sekvenčna izvedba    | Paralelna izvedba (9 jeder)  | Distributed izvedba |
 |------------------------|----------------------|---------------------|---------------------|
@@ -162,6 +173,11 @@ MacBook Pro M1 Max 64Gb/2Tb.
 | 3072 x 3072 Slika      | 1,882 sec            | 0,679 sec           | 0,272 sec|
 | 4096 x 4096 Slika      | 3,311 sec            | 1,245 sec           | 0,489 sec|
 
+![alt text](/slike-grafov/SobelX.png)
+<br>
+<hr>
+<br>
+
 | Gaussian               | Sekvenčna izvedba    | Paralelna izvedba (9 jeder)  | Distributed izvedba |
 |------------------------|----------------------|---------------------|---------------------|
 | 128 x 128 Slika        | 0,007 sec            | 0,003 sec           | 0,003 sec|
@@ -175,6 +191,11 @@ MacBook Pro M1 Max 64Gb/2Tb.
 | 3072 x 3072 Slika      | 1,953 sec            | 0,694 sec           | 0,253 sec|
 | 4096 x 4096 Slika      | 3,492 sec            | 1,259 sec           | 0,448 sec|
 
+![alt text](/slike-grafov/Gaussian.png)
+<br>
+<hr>
+<br>
+
 | Edge detection         | Sekvenčna izvedba    | Paralelna izvedba (9 jeder)  | Distributed izvedba |
 |------------------------|----------------------|---------------------|---------------------|
 | 128 x 128 Slika        | 0,009 sec            | 0,003 sec           | 0,002 sec|
@@ -187,6 +208,12 @@ MacBook Pro M1 Max 64Gb/2Tb.
 | 2048 x 2048 Slika      | 0,838 sec            | 0,325 sec           | 0,128 sec|
 | 3072 x 3072 Slika      | 1,904 sec            | 0,753 sec           | 0,279 sec|
 | 4096 x 4096 Slika      | 3,320 sec            | 1,305 sec           | 0,515 sec |
+
+![alt text](/slike-grafov/EdgeDetection.png)
+<br>
+<hr>
+<br>
+
 
 | Mirror                   | Sekvenčna izvedba      | Paralelna izvedba (9 jeder)   |
 |------------------------|--------------------------|---------------------
