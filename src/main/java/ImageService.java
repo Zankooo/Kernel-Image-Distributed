@@ -51,8 +51,11 @@ public class ImageService {
                 try {
                     String ime = datoteka.getName().toLowerCase();
                     if (ime.endsWith(".png") || ime.endsWith(".jpg") || ime.endsWith(".jpeg")) {
-                        slikeSeznam.add(ImageIO.read(datoteka));
-                        count++;
+                        BufferedImage img = ImageIO.read(datoteka);
+                        if (img != null) {
+                            slikeSeznam.add(img);
+                            count++;
+                        }
                     }
                 } catch (IOException e) {
                     System.out.println("Napaka pri datoteki: " + datoteka.getName());
@@ -77,9 +80,7 @@ public class ImageService {
 
         ArrayList<float[][]> kerneli = Kernel.izbiraKernelov(imenaKernelov);
         
-        // čas merimo izključno za izvedbo konvolucije
-        // tukaj ne vključimo notri čas branja slika čas write na disk..
-        long zacetniCas = System.currentTimeMillis();
+        
 
         ArrayList<BufferedImage> rezultati;
         try {
@@ -90,11 +91,7 @@ public class ImageService {
             rezultati = new ArrayList<>();
         }
 
-        long koncaniCas = System.currentTimeMillis();
-        double kolikoCasaJeTrajaloSek = (koncaniCas - zacetniCas) / 1000.0;
-
-        System.out.println();
-        System.out.println("⏱️ Čas IZRAČUNA (brez branja/shranjevanja): " + kolikoCasaJeTrajaloSek + " sekund");
+        
         
         //shranimo v mapo slike
         shraniNoveSlikeVmapo(rezultati);

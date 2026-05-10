@@ -125,81 +125,81 @@ MacBook Pro M1 Max 64Gb/2Tb.
 
 | Blur                   | Sekvenčna izvedba    | Paralelna izvedba (9 jeder)   | Distributed izvedba |
 |------------------------|----------------------|-------------------------------|---------------------|
-| 128 x 128 Slika        | 0,023 sec            | 0,004 sec                        | Time for Distributed|
-| 256 x 256 Slika        | 0,046 sec            | 0,008 sec                       | Time for Distributed|
-| 384 x 384 Slika        | 0,084 sec            | 0,019 sec                      | Time for Distributed|
-| 512 x 512 Slika        | 0,136 sec            | 0,028 sec                      | Time for Distributed|
-| 767 x 768 Slika        | 0,277 sec            | 0,056 sec                       | Time for Distributed|
-| 1024 x 1024 Slika      | 0,465 sec            | 0,113 sec                        | Time for Distributed|
-| 1536 x 1536 Slika      | 1,027 sec            | 0,204 sec                        | Time for Distributed|
-| 2048 x 2048 Slika      | 1,822 sec            | 0,363 sec                        | Time for Distributed|
-| 3072 x 3072 Slika      | 4,105 sec            | 0,887 sec                        | Time for Distributed|
-| 4096 x 4096 Slika      | 7,395 sec            | 1,493 sec                         | Time for Distributed|
+| 128 x 128 Slika        | 0,023 sec            | 0,004 sec                        | 0,004 sec |
+| 256 x 256 Slika        | 0,046 sec            | 0,008 sec                       | 0,006 sec |
+| 384 x 384 Slika        | 0,084 sec            | 0,019 sec                      | 0,008 sec |
+| 512 x 512 Slika        | 0,136 sec            | 0,028 sec                      | 0,013 sec |
+| 767 x 768 Slika        | 0,277 sec            | 0,056 sec                       | 0,022 sec |
+| 1024 x 1024 Slika      | 0,465 sec            | 0,113 sec                        | 0,038 sec |
+| 1536 x 1536 Slika      | 1,027 sec            | 0,204 sec                        | 0,085 sec |
+| 2048 x 2048 Slika      | 1,822 sec            | 0,363 sec                        | 0,151 sec |
+| 3072 x 3072 Slika      | 4,105 sec            | 0,887 sec                        | 0,334 sec|
+| 4096 x 4096 Slika      | 7,395 sec            | 1,493 sec                         | 0,592 sec|
 
 | Sharpen                | Sekvenčna izvedba    | Paralelna izvedba (9 jeder) | Distributed izvedba |
 |------------------------|----------------------|---------------------|---------------------|
-| 128 x 128 Slika        | 0,01 sec             | 0,004 sec           | Time for Distributed|
-| 256 x 256 Slika        | 0,016 sec            | 0,007 sec           | Time for Distributed|
-| 384 x 384 Slika        | 0,041 sec            | 0,011 sec           | Time for Distributed|
-| 512 x 512 Slika        | 0,06 sec             | 0,021 sec           | Time for Distributed|
-| 767 x 768 Slika        | 0,122 sec            | 0,047 sec           | Time for Distributed|
-| 1024 x 1024 Slika      | 0,217 sec            | 0,071 sec           | Time for Distributed|
-| 1536 x 1536 Slika      | 0,48 sec             | 0,18 sec            | Time for Distributed|
-| 2048 x 2048 Slika      | 0,862 sec            | 0,304 sec           | Time for Distributed|
-| 3072 x 3072 Slika      | 1,936 sec            | 0,733 sec           | Time for Distributed|
-| 4096 x 4096 Slika      | 3,417 sec            | 1,241 sec           | Time for Distributed|
+| 128 x 128 Slika        | 0,01 sec             | 0,004 sec           | 0,003 sec|
+| 256 x 256 Slika        | 0,016 sec            | 0,007 sec           | 0,004 sec|
+| 384 x 384 Slika        | 0,041 sec            | 0,011 sec           | 0,006 sec|
+| 512 x 512 Slika        | 0,06 sec             | 0,021 sec           | 0,009 sec|
+| 767 x 768 Slika        | 0,122 sec            | 0,047 sec           | 0,017 sec|
+| 1024 x 1024 Slika      | 0,217 sec            | 0,071 sec           | 0,028 sec|
+| 1536 x 1536 Slika      | 0,48 sec             | 0,18 sec            | 0,064 sec|
+| 2048 x 2048 Slika      | 0,862 sec            | 0,304 sec           | 0,117 sec|
+| 3072 x 3072 Slika      | 1,936 sec            | 0,733 sec           | 0,260 sec|
+| 4096 x 4096 Slika      | 3,417 sec            | 1,241 sec           | 0,465 sec|
 
 |  SobelX                | Sekvenčna izvedba    | Paralelna izvedba (9 jeder)  | Distributed izvedba |
 |------------------------|----------------------|---------------------|---------------------|
-| 128 x 128 Slika        | 0,008 sec            | 0,003 sec           | Time for Distributed|
-| 256 x 256 Slika        | 0,02 sec             | 0,008 sec           | Time for Distributed|
-| 384 x 384 Slika        | 0,047 sec            | 0,016 sec           | Time for Distributed|
-| 512 x 512 Slika        | 0,06 sec             | 0,026 sec           | Time for Distributed|
-| 767 x 768 Slika        | 0,118 sec            | 0,04 sec            | Time for Distributed|
-| 1024 x 1024 Slika      | 0,209 sec            | 0,076 sec           | Time for Distributed|
-| 1536 x 1536 Slika      | 0,478 sec            | 0,171 sec           | Time for Distributed|
-| 2048 x 2048 Slika      | 0,831 sec            | 0,284 sec           | Time for Distributed|
-| 3072 x 3072 Slika      | 1,882 sec            | 0,679 sec           | Time for Distributed|
-| 4096 x 4096 Slika      | 3,311 sec            | 1,245 sec           | Time for Distributed|
+| 128 x 128 Slika        | 0,008 sec            | 0,003 sec           | 0,002 sec |
+| 256 x 256 Slika        | 0,02 sec             | 0,008 sec           | 0,004 sec|
+| 384 x 384 Slika        | 0,047 sec            | 0,016 sec           | 0,006 sec|
+| 512 x 512 Slika        | 0,06 sec             | 0,026 sec           | 0,010 sec|
+| 767 x 768 Slika        | 0,118 sec            | 0,04 sec            | 0,018 sec|
+| 1024 x 1024 Slika      | 0,209 sec            | 0,076 sec           | 0,032 sec |
+| 1536 x 1536 Slika      | 0,478 sec            | 0,171 sec           | 0,068 sec|
+| 2048 x 2048 Slika      | 0,831 sec            | 0,284 sec           | 0,125 sec|
+| 3072 x 3072 Slika      | 1,882 sec            | 0,679 sec           | 0,272 sec|
+| 4096 x 4096 Slika      | 3,311 sec            | 1,245 sec           | 0,489 sec|
 
 | Gaussian               | Sekvenčna izvedba    | Paralelna izvedba (9 jeder)  | Distributed izvedba |
 |------------------------|----------------------|---------------------|---------------------|
-| 128 x 128 Slika        | 0,007 sec            | 0,003 sec           | Time for Distributed|
-| 256 x 256 Slika        | 0,022 sec            | 0,007 sec           | Time for Distributed|
-| 384 x 384 Slika        | 0,041 sec            | 0,016 sec           | Time for Distributed|
-| 512 x 512 Slika        | 0,06 sec             | 0,02 sec            | Time for Distributed|
-| 767 x 768 Slika        | 0,123 sec            | 0,04 sec            | Time for Distributed|
-| 1024 x 1024 Slika      | 0,215 sec            | 0,083 sec           | Time for Distributed|
-| 1536 x 1536 Slika      | 0,487 sec            | 0,16 sec            | Time for Distributed|
-| 2048 x 2048 Slika      | 0,859 sec            | 0,295 sec           | Time for Distributed|
-| 3072 x 3072 Slika      | 1,953 sec            | 0,694 sec           | Time for Distributed|
-| 4096 x 4096 Slika      | 3,492 sec            | 1,259 sec           | Time for Distributed|
+| 128 x 128 Slika        | 0,007 sec            | 0,003 sec           | 0,003 sec|
+| 256 x 256 Slika        | 0,022 sec            | 0,007 sec           | 0,003 sec|
+| 384 x 384 Slika        | 0,041 sec            | 0,016 sec           | 0,006 sec|
+| 512 x 512 Slika        | 0,06 sec             | 0,02 sec            | 0,010 sec|
+| 767 x 768 Slika        | 0,123 sec            | 0,04 sec            | 0,016 sec|
+| 1024 x 1024 Slika      | 0,215 sec            | 0,083 sec           | 0,028 sec|
+| 1536 x 1536 Slika      | 0,487 sec            | 0,16 sec            | 0,063 sec|
+| 2048 x 2048 Slika      | 0,859 sec            | 0,295 sec           | 0,112 sec|
+| 3072 x 3072 Slika      | 1,953 sec            | 0,694 sec           | 0,253 sec|
+| 4096 x 4096 Slika      | 3,492 sec            | 1,259 sec           | 0,448 sec|
 
 | Edge detection         | Sekvenčna izvedba    | Paralelna izvedba (9 jeder)  | Distributed izvedba |
 |------------------------|----------------------|---------------------|---------------------|
-| 128 x 128 Slika        | 0,009 sec            | 0,003 sec  | Time for Distributed|
-| 256 x 256 Slika        | 0,016 sec            | 0,008 sec   | Time for Distributed|
-| 384 x 384 Slika        | 0,037 sec            | 0,015 sec   | Time for Distributed|
-| 512 x 512 Slika        | 0,057 sec            | 0,025 sec   | Time for Distributed|
-| 767 x 768 Slika        | 0,118 sec            | 0,052 sec  | Time for Distributed|
-| 1024 x 1024 Slika      | 0,208 sec            | 0,07 sec   | Time for Distributed|
-| 1536 x 1536 Slika      | 0,474 sec            | 0,172 sec   | Time for Distributed|
-| 2048 x 2048 Slika      | 0,838 sec            | 0,325 sec   | Time for Distributed|
-| 3072 x 3072 Slika      | 1,904 sec            | 0,753 sec   | Time for Distributed|
-| 4096 x 4096 Slika      | 3,320 sec            | 1,305 sec   | Time for Distributed|
+| 128 x 128 Slika        | 0,009 sec            | 0,003 sec           | 0,002 sec|
+| 256 x 256 Slika        | 0,016 sec            | 0,008 sec           | 0,004 sec|
+| 384 x 384 Slika        | 0,037 sec            | 0,015 sec           | 0,006 sec|
+| 512 x 512 Slika        | 0,057 sec            | 0,025 sec           | 0,009 sec|
+| 767 x 768 Slika        | 0,118 sec            | 0,052 sec           | 0,018 sec|
+| 1024 x 1024 Slika      | 0,208 sec            | 0,07 sec            | 0,031 sec|
+| 1536 x 1536 Slika      | 0,474 sec            | 0,172 sec           | 0,072 sec|
+| 2048 x 2048 Slika      | 0,838 sec            | 0,325 sec           | 0,128 sec|
+| 3072 x 3072 Slika      | 1,904 sec            | 0,753 sec           | 0,279 sec|
+| 4096 x 4096 Slika      | 3,320 sec            | 1,305 sec           | 0,515 sec |
 
-| Mirror                   | Sekvenčna izvedba    | Paralelna izvedba (9 jeder)   | Distributed izvedba |
-|------------------------|----------------------|---------------------|---------------------|
-| 128 x 128 Slika        | 0,001 sec  | 0,004 sec   | Time for Distributed|
-| 256 x 256 Slika        | 0,004 sec  | 0,008 sec   | Time for Distributed|
-| 384 x 384 Slika        | 0,005 sec  | 0,006 sec   | Time for Distributed|
-| 512 x 512 Slika        | 0,011 sec  | 0,009 sec   | Time for Distributed|
-| 767 x 768 Slika        | 0,017 sec  | 0,016 sec   | Time for Distributed|
-| 1024 x 1024 Slika      | 0,028 sec  | 0,027 sec  | Time for Distributed|
-| 1536 x 1536 Slika      | 0,061 sec  | 0,062 sec   | Time for Distributed|
-| 2048 x 2048 Slika      | 0,111 sec  | 0,112 sec   | Time for Distributed|
-| 3072 x 3072 Slika      | 0,249 sec  | 0,249 sec   | Time for Distributed|
-| 4096 x 4096 Slika      | 0,449 sec  | 0,446 sec   | Time for Distributed|
+| Mirror                   | Sekvenčna izvedba      | Paralelna izvedba (9 jeder)   |
+|------------------------|--------------------------|---------------------
+| 128 x 128 Slika        | 0,001 sec  | 0,004 sec   | 
+| 256 x 256 Slika        | 0,004 sec  | 0,008 sec   | 
+| 384 x 384 Slika        | 0,005 sec  | 0,006 sec   | 
+| 512 x 512 Slika        | 0,011 sec  | 0,009 sec   | 
+| 767 x 768 Slika        | 0,017 sec  | 0,016 sec   | 
+| 1024 x 1024 Slika      | 0,028 sec  | 0,027 sec   | 
+| 1536 x 1536 Slika      | 0,061 sec  | 0,062 sec   | 
+| 2048 x 2048 Slika      | 0,111 sec  | 0,112 sec   | 
+| 3072 x 3072 Slika      | 0,249 sec  | 0,249 sec   | 
+| 4096 x 4096 Slika      | 0,449 sec  | 0,446 sec   | 
 
 
 

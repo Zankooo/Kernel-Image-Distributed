@@ -20,8 +20,14 @@ public class KonvolucijaMPI {
      * Glavna funkcija za porazdeljeno obdelavo slik.
      */
     public static ArrayList<BufferedImage> izvediOperacije(ArrayList<BufferedImage> slike, ArrayList<float[][]> kerneli, ArrayList<String> imenaKernelov, JCheckBox cbMirror) throws MPIException {
+        
+        // čas merimo izključno za izvedbo konvolucije
+        // tukaj ne vključimo notri čas branja slika čas write na disk..
+        long zacetniCas = System.currentTimeMillis();
+
+
         int size = MPI.COMM_WORLD.Size();
-        int numWorkers = size - 1;
+        int numWorkers = Math.max(1, size - 1); // Vsaj 1 delavec, da ne pride do / 0
 
         ArrayList<BufferedImage> rezultatiSlik = new ArrayList<>();
 
@@ -43,6 +49,11 @@ public class KonvolucijaMPI {
 
             rezultatiSlik.add(trenutnaSlika);
         }
+        long koncaniCas = System.currentTimeMillis();
+        double kolikoCasaJeTrajaloSek = (koncaniCas - zacetniCas) / 1000.0;
+
+        System.out.println();
+        System.out.println("⏱️ Čas IZRAČUNA " + kolikoCasaJeTrajaloSek + " sekund");
 
         return rezultatiSlik;
     }
