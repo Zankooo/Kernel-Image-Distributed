@@ -52,7 +52,7 @@ public class Gui {
      * ustvarimo prazno okno
      */
     private static JFrame ustvariOsnovnoPraznoOkno() {
-        JFrame frame = new JFrame("Kernel Image Processing - Sequential");
+        JFrame frame = new JFrame("Kernel Image Processing - Distributed");
         frame.setSize(600, 380);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         return frame;
