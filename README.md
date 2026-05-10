@@ -34,13 +34,40 @@ Mi kot uporabnik programa damo programu eno ali več slik svojih poljubnih slik 
 Projekt uporablja **Maven** za upravljanje odvisnosti in **MPJ Express** za porazdeljeno izvajanje.
 
 ### 1. Priprava okolja
-Pred prvim zagonom si moraš na računalnik prenesti [MPJ Express](http://mpjexpress.org/) in nastaviti okoljsko spremenljivko `MPJ_HOME`, ki kaže na mapo, kjer si razširil knjižnico.
+Za delovanje programa moraš imeti na računalniku nameščeno naslednje:
 
-**Primer nastavitve (Mac/Linux):**
-V svojo `.zshrc` ali `.bash_profile` dodaj:
-```bash
-export MPJ_HOME=/pot/do/mape/mpj-v0_44
-```
+#### A) Java JDK 21
+Program zahteva različico Java 21.
+- **Mac (z Homebrew):** `brew install openjdk@21`
+- **Windows/Ostalo:** Prenesi z [Adoptium (Temurin 21)](https://adoptium.net/temurin/releases/?version=21).
+- **Preverjanje:** V terminal vpiši `java -version`. Moralo bi izpisati `openjdk version "21.x.x"`.
+
+#### B) Maven
+Maven se uporablja za zbiranje (build) projekta.
+- **Mac (z Homebrew):** `brew install maven`
+- **Windows:** 
+  1. Prenesi "Binary zip archive" z [uradne strani](https://maven.apache.org/download.cgi).
+  2. Razpakiraj ga (npr. v `C:\maven`).
+  3. Dodaj pot do `bin` mape (npr. `C:\maven\bin`) v sistemsko spremenljivko **Path**:
+     - Išči "Environment Variables" v Start meniju.
+     - Pod "System variables" najdi **Path**, klikni **Edit** -> **New** -> prilepi pot do `bin` mape.
+- **Preverjanje:** V terminal vpiši `mvn -version`.
+
+#### C) MPJ Express (Ključno za porazdeljeno delovanje)
+1. **Prenos:** Na [mpjexpress.org](http://mpjexpress.org/download.php) prenesi zadnjo različico `mpj-v0_44.zip`
+2. **Razpakiranje:** Unzippaj datoteko.
+3. **Nastavitev okoljske spremenljivke `MPJ_HOME`(ni nujno vendar priporičljivo):**
+   - **Mac/Linux:** Odpri datoteko `~/.zshrc` (ali `~/.bash_profile`) in dodaj:
+     ```bash
+     export MPJ_HOME=/pot/do/tvoje/mape/mpj-v0_44
+     export PATH=$MPJ_HOME/bin:$PATH
+     ```
+     Nato v terminalu zaženi `source ~/.zshrc`.
+   - **Windows:**
+     - Desni klik na "This PC" -> Properties -> Advanced System Settings -> Environment Variables.
+     - Pod "System Variables" klikni **New**. Name: `MPJ_HOME`, Value: `C:\pot\do\mpj-v0_44`.
+     - Najdi spremenljivko `Path`, klikni **Edit** -> **New** -> dodaj `%MPJ_HOME%\bin`.
+4. **Preverjanje:** V terminalu vpiši `echo $MPJ_HOME` (Mac) ali `echo %MPJ_HOME%` (Windows).
 
 ### 2. Prevajanje in zagon
 V korenski mapi projekta izvedi:
@@ -50,8 +77,17 @@ V korenski mapi projekta izvedi:
    mvn clean compile
    ```
 2. **Zagon:** 
+   Program lahko zaženeš na dva načina (izbereš tistega, ki ti boljši):
+
+   **A) Če imaš nastavljen `MPJ_HOME` (naj bi bila boljša strategija):**
    ```bash
    $MPJ_HOME/bin/mpjrun.sh -np 4 -cp target/classes:lib/mpj.jar Main
+   ```
+
+   **B) Če nimaš nastavljene poti (uporabiš direktno pot):**
+   *Zamenjaj `/pot/do/mpj` z dejansko potjo.*
+   ```bash
+   /pot/do/mpj/bin/mpjrun.sh -np 4 -cp target/classes:lib/mpj.jar Main
    ```
 
 ampak zakaj moras pol rocno naloziti mpj express ce je v maven to opisano??
