@@ -4,9 +4,14 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         try {
+            // vsi procesi zacnejo tukaj. 
+            // mpjrun.sh -np 4 -cp target/classes:lib/mpj.jar Main
+            // ta ukaz pomeni da zacenemo 4 procese istega programa
+            // inicializira se MPI okolje
             MPI.Init(args);
+            // vsak proces dobi svoj rank
             int rank = MPI.COMM_WORLD.Rank();
-
+            // prvi proces oziroma master ima GUI
             if (rank == 0) {
                 Gui.ustvariGui();
                 // Počakamo, da se GUI dejansko naloži in nato čakamo na njegovo zaprtje
@@ -18,7 +23,9 @@ public class Main {
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
-            } else {
+            } 
+            // ostali so pa workerji.
+            else {
                 KonvolucijaMPI.workerProcess(rank);
             }
 
